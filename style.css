@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #f3f3f3, #ffffff);
+}
+
+.map-container {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+.map {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  animation: loadMap 3s forwards;
+}
+
+.welcome-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #000;
+  text-align: center;
+  opacity: 0;
+  animation: textFadeIn 3s forwards;
+}
+
+/* Keyframe Animations */
+@keyframes loadMap {
+  0% {
+    clip-path: inset(100% 0 0 0);
+    opacity: 0;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
